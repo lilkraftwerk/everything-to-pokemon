@@ -1,14 +1,26 @@
 {
 	"manifest_version": 2,
-	"name": "SJW to Skeleton",
-	"version": "1.6",
-	"description": "Replaces the text 'SJW' with 'skeleton'.",
-	"icons": { 
+	"name": "Everything to Pokémon",
+	"version": "1",
+	"description": "Replaces every word with a Pokémon",
+	"browser_action": {
+          "default_icon": {                    // optional
+            "19": "img/bulbasmall.png",           // optional
+            "38": "img/bulbabig.png"            // optional
+          },
+          "default_title": "Everything To Pokémon"
+        },
+
+	"icons": {
 		"16": "icons/icon16.png",
 		"48": "icons/icon48.png",
-		"128": "icons/icon128.png" 
+		"128": "icons/icon128.png"
 	},
-	"content_scripts": 
+	 "background": {
+	 		"scripts": ["events.js"],
+	 		"persistent": true
+	 	},
+	"content_scripts":
 	[
 		{
 			"matches": ["*://*/*"],
